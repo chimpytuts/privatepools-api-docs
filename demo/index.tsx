@@ -91,6 +91,14 @@ class DemoApp extends React.Component<
     }
     return (
       <>
+        <Heading>
+          <a href=".">
+            <Logo
+              src="https://github.com/Redocly/redoc/raw/main/docs/images/redoc.png"
+              alt="Redoc logo"
+            />
+          </a>
+        </Heading>
         <RedocStandalone
           spec={this.state.spec}
           specUrl={proxiedUrl}

@@ -287,14 +287,14 @@ export class RedocNormalizedOptions {
 
     this.scrollYOffset = RedocNormalizedOptions.normalizeScrollYOffset(raw.scrollYOffset);
     this.hideHostname = RedocNormalizedOptions.normalizeHideHostname(raw.hideHostname);
-    this.expandResponses = RedocNormalizedOptions.normalizeExpandResponses(raw.expandResponses);
+    this.expandResponses = RedocNormalizedOptions.normalizeExpandResponses('all');
     this.requiredPropsFirst = argValueToBoolean(raw.requiredPropsFirst);
     this.sortPropsAlphabetically = argValueToBoolean(raw.sortPropsAlphabetically);
     this.sortEnumValuesAlphabetically = argValueToBoolean(raw.sortEnumValuesAlphabetically);
     this.sortOperationsAlphabetically = argValueToBoolean(raw.sortOperationsAlphabetically);
     this.sortTagsAlphabetically = argValueToBoolean(raw.sortTagsAlphabetically);
     this.nativeScrollbars = argValueToBoolean(raw.nativeScrollbars);
-    this.pathInMiddlePanel = argValueToBoolean(raw.pathInMiddlePanel);
+    this.pathInMiddlePanel = argValueToBoolean(true);
     this.untrustedSpec = argValueToBoolean(raw.untrustedSpec);
     this.hideDownloadButton = argValueToBoolean(raw.hideDownloadButton);
     this.downloadFileName = raw.downloadFileName;

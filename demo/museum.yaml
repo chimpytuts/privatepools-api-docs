@@ -1,772 +1,2344 @@
+theme:
 openapi: 3.1.0
 info:
-  title: Redocly Museum API
-  description: An imaginary, but delightful Museum API for interacting with museum services and information. Built with love by Redocly.
-  version: 1.0.0
+  title: PrivatePools Network APIs
+  description: Welcome to the PrivatePools Network API documentation. If you are interested in testing our API, please reach out to us at our E-mail. We will provide you with an API key necessary to access and test our API endpoints. Our API offers a robust and secure way to interact with the PrivatePools network, allowing you to retrieve statistics, manage token-related data, and more.
   contact:
-    email: team@redocly.com
-    url: 'https://redocly.com/docs/cli/'
+    email: team@privatepools.network
+    url: 'https://privatepools.network/'
   x-logo:
-    url: 'https://redocly.github.io/redoc/museum-logo.png'
-    altText: Museum logo
-  license:
-    name: MIT
-    url: 'https://opensource.org/license/mit/ '
+    url: 'https://avatars.githubusercontent.com/u/173836492?s=400&u=31ddb8fc19f91cc26c7ab9fa771f25af48b6660c&v=4'
+    altText: PrivatePools logo
 servers:
-  - url: 'https://api.fake-museum-example.com/v1'
+  - url: 'https://polygonrunbotdoprimocosta.xyz'
+    description: Server for Stats
+  - url: 'https://binancewrewrwrrfrsasdfew.xyz'
+    description: Server for Rewards
 paths:
-  /museum-hours:
+  /stats:
     get:
-      summary: Get museum hours
-      description: Get upcoming museum operating hours
-      operationId: getMuseumHours
+      summary: 📑Stats of protocol
+      description: Retrieves general statistics.
+      operationId: getStats
       tags:
-        - Operations
-      parameters:
-        - $ref: '#/components/parameters/StartDate'
-        - $ref: '#/components/parameters/PaginationPage'
-        - $ref: '#/components/parameters/PaginationLimit'
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetMuseumHoursResponse'
-              examples:
-                default:
-                  summary: Museum opening hours
+                type: object
+                properties:
+                  TotalTrades:
+                    type: integer
+                    description: The total number of trades executed.
+                    example: 6
+                  24hProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 24 hours.
+                    example: 0
+                  24hProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 24 hours.
+                    example: 0
+                  24hProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 24 hours.
+                    example: 0
+                  7dProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 7 days.
+                    example: -0.6330970418410466
+                  7dProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 7 days.
+                    example: -0.000009763664626457666
+                  7dProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 7 days.
+                    example: -0.00017953323911339378
+                  30dProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 30 days.
+                    example: -0.6330970418410466
+                  30dProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 30 days.
+                    example: -0.000009763664626457666
+                  30dProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 30 days.
+                    example: -0.00017953323911339378
+                  TotalProfitUsd:
+                    type: number
+                    description: Total profit in USD.
+                    example: -0.6330970418410466
+                  TotalProfitBTC:
+                    type: number
+                    description: Total profit in BTC.
+                    example: -0.000009763664626457666
+                  TotalProfitETH:
+                    type: number
+                    description: Total profit in ETH.
+                    example: -0.00017953323911339378
+                  24hRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 24 hours.
+                    example: 0
+                  24hRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 24 hours.
+                    example: 0
+                  24hRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 24 hours.
+                    example: 0
+                  7dRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 7 days.
+                    example: 0.2860639394672033
+                  7dRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 7 days.
+                    example: 0.00000441353958564768
+                  7dRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 7 days.
+                    example: 0.00008123256149832993
+                  30dRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 30 days.
+                    example: 0.2860639394672033
+                  30dRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 30 days.
+                    example: 0.00000441353958564768
+                  30dRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 30 days.
+                    example: 0.00008123256149832993
+                  TotalRevenueUsd:
+                    type: number
+                    description: Total revenue in USD.
+                    example: 0.2860639394672033
+                  TotalRevenueBTC:
+                    type: number
+                    description: Total revenue in BTC.
+                    example: 0.00000441353958564768
+                  TotalRevenueETH:
+                    type: number
+                    description: Total revenue in ETH.
+                    example: 0.00008123256149832993
+                  24hVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 24 hours.
+                    example: 0
+                  24hVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 24 hours.
+                    example: 0
+                  24hVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 24 hours.
+                    example: 0
+                  7dVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 7 days.
+                    example: 122.82336337335816
+                  7dVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 7 days.
+                    example: 0.001895225740375526
+                  7dVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 7 days.
+                    example: 0.03485864868341141
+                  30dVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 30 days.
+                    example: 122.82336337335816
+                  30dVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 30 days.
+                    example: 0.001895225740375526
+                  30dVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 30 days.
+                    example: 0.03485864868341141
+                  TotalVolumeUsd:
+                    type: number
+                    description: Total trading volume in USD.
+                    example: 122.82336337335816
+                  TotalVolumeBTC:
+                    type: number
+                    description: Total trading volume in BTC.
+                    example: 0.001895225740375526
+                  TotalVolumeETH:
+                    type: number
+                    description: Total trading volume in ETH.
+                    example: 0.03485864868341141
+                  24hGasFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 24 hours.
+                    example: 0
+                  24hGasFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 24 hours.
+                    example: 0
+                  24hGasFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 24 hours.
+                    example: 0
+                  7dGasFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 7 days.
+                    example: 0.919161621775
+                  7dGasFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 7 days.
+                    example: 0.000014177214219461251
+                  7dGasFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 7 days.
+                    example: 0.00026076598563977904
+                  30dGasFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 30 days.
+                    example: 0.919161621775
+                  30dGasFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 30 days.
+                    example: 0.000014177214219461251
+                  30dGasFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 30 days.
+                    example: 0.00026076598563977904
+                  TotalGasFeeUsd:
+                    type: number
+                    description: Total gas fees in USD.
+                    example: 0.919161621775
+                  TotalGasFeeBTC:
+                    type: number
+                    description: Total gas fees in BTC.
+                    example: 0.000014177214219461251
+                  TotalGasFeeETH:
+                    type: number
+                    description: Total gas fees in ETH.
+                    example: 0.00026076598563977904
+                  24hGasFee:
+                    type: number
+                    description: Gas fees in unspecified currency over the last 24 hours.
+                    example: 0
+                  24hTrades:
+                    type: number
+                    description: Number of trades executed over the last 24 hours.
+                    example: 0
+                  7dTrades:
+                    type: number
+                    description: Number of trades executed over the last 7 days.
+                    example: 6
+                  30dTrades:
+                    type: number
+                    description: Number of trades executed over the last 30 days.
+                    example: 6
+                  7dGasFee:
+                    type: number
+                    description: Gas fees in unspecified currency over the last 7 days.
+                    example: 0
+                  30dGasFee:
+                    type: number
+                    description: Gas fees in unspecified currency over the last 30 days.
+                    example: 0
+                  TotalGasFee:
+                    type: number
+                    description: Total gas fees in unspecified currency.
+                    example: 0.00154629746
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /profitsByToken/{token}:
+    get:
+      summary: 📈Profits by token
+      description: Retrieves profits by token.
+      operationId: getProfitsByToken
+      tags:
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
+      parameters:
+        - name: token
+          in: path
+          required: true
+          description: Token address.
+          schema:
+            type: string
+            example: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  24hProfit:
+                    type: object
+                    properties:
+                      USD:
+                        type: number
+                        description: Profit in USD over the last 24 hours.
+                        example: 0
+                      BTC:
+                        type: number
+                        description: Profit in BTC over the last 24 hours.
+                        example: 0
+                      ETH:
+                        type: number
+                        description: Profit in ETH over the last 24 hours.
+                        example: 0
+                      Token:
+                        type: number
+                        description: Profit in the specified token over the last 24 hours.
+                        example: 0
+                  7dProfit:
+                    type: object
+                    properties:
+                      USD:
+                        type: number
+                        description: Profit in USD over the last 7 days.
+                        example: 0.20993224106979275
+                      BTC:
+                        type: number
+                        description: Profit in BTC over the last 7 days.
+                        example: 0.0000032210901552586563
+                      ETH:
+                        type: number
+                        description: Profit in ETH over the last 7 days.
+                        example: 0.00005921962987193946
+                      Token:
+                        type: number
+                        description: Profit in the specified token over the last 7 days.
+                        example: 0.0015487618652385874
+                  30dProfit:
+                    type: object
+                    properties:
+                      USD:
+                        type: number
+                        description: Profit in USD over the last 30 days.
+                        example: 0.20993224106979275
+                      BTC:
+                        type: number
+                        description: Profit in BTC over the last 30 days.
+                        example: 0.0000032210901552586563
+                      ETH:
+                        type: number
+                        description: Profit in ETH over the last 30 days.
+                        example: 0.00005921962987193946
+                      Token:
+                        type: number
+                        description: Profit in the specified token over the last 30 days.
+                        example: 0.0015487618652385874
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /revenuesByToken/{token}:
+    get:
+      summary: 📉Revenues by token
+      description: Retrieves revenues by token.
+      operationId: getRevenuesByToken
+      tags:
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
+      parameters:
+        - name: token
+          in: path
+          required: true
+          description: Token address.
+          schema:
+            type: string
+            example: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  24hRevenue:
+                    type: object
+                    properties:
+                      USD:
+                        type: number
+                        description: Revenue in USD over the last 24 hours.
+                        example: 0
+                      BTC:
+                        type: number
+                        description: Revenue in BTC over the last 24 hours.
+                        example: 0
+                      ETH:
+                        type: number
+                        description: Revenue in ETH over the last 24 hours.
+                        example: 0
+                      Token:
+                        type: number
+                        description: Revenue in the specified token over the last 24 hours.
+                        example: 0
+                  7dRevenue:
+                    type: object
+                    properties:
+                      USD:
+                        type: number
+                        description: Revenue in USD over the last 7 days.
+                        example: 0.1071146763707072
+                      BTC:
+                        type: number
+                        description: Revenue in BTC over the last 7 days.
+                        example: 0.0000016435085456373307
+                      ETH:
+                        type: number
+                        description: Revenue in ETH over the last 7 days.
+                        example: 0.000030215979601956845
+                      Token:
+                        type: number
+                        description: Revenue in the specified token over the last 7 days.
+                        example: 0.0007902267843175881
+                  30dRevenue:
+                    type: object
+                    properties:
+                      USD:
+                        type: number
+                        description: Revenue in USD over the last 30 days.
+                        example: 0.1071146763707072
+                      BTC:
+                        type: number
+                        description: Revenue in BTC over the last 30 days.
+                        example: 0.0000016435085456373307
+                      ETH:
+                        type: number
+                        description: Revenue in ETH over the last 30 days.
+                        example: 0.000030215979601956845
+                      Token:
+                        type: number
+                        description: Revenue in the specified token over the last 30 days.
+                        example: 0.0007902267843175881
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /volumesByToken/{token}:
+    get:
+      summary: 📃Volumes by token
+      description: Retrieves trading volumes by token.
+      operationId: getVolumesByToken
+      tags:
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
+      parameters:
+        - name: token
+          in: path
+          required: true
+          description: Token address.
+          schema:
+            type: string
+            example: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  24hVolume:
+                    type: object
+                    properties:
+                      USD:
+                        type: number
+                        description: Volume in USD over the last 24 hours.
+                        example: 0
+                      BTC:
+                        type: number
+                        description: Volume in BTC over the last 24 hours.
+                        example: 0
+                      ETH:
+                        type: number
+                        description: Volume in ETH over the last 24 hours.
+                        example: 0
+                      Token:
+                        type: number
+                        description: Volume in the specified token over the last 24 hours.
+                        example: 0
+                  7dVolume:
+                    type: object
+                    properties:
+                      USD:
+                        type: number
+                        description: Volume in USD over the last 7 days.
+                        example: 51.0179511365602
+                      BTC:
+                        type: number
+                        description: Volume in BTC over the last 7 days.
+                        example: 0.0007827918772202721
+                      ETH:
+                        type: number
+                        description: Volume in ETH over the last 7 days.
+                        example: 0.01439163833859445
+                      Token:
+                        type: number
+                        description: Volume in the specified token over the last 7 days.
+                        example: 0.37639022678431755
+                  30dVolume:
+                    type: object
+                    properties:
+                      USD:
+                        type: number
+                        description: Volume in USD over the last 30 days.
+                        example: 51.0179511365602
+                      BTC:
+                        type: number
+                        description: Volume in BTC over the last 30 days.
+                        example: 0.0007827918772202721
+                      ETH:
+                        type: number
+                        description: Volume in ETH over the last 30 days.
+                        example: 0.01439163833859445
+                      Token:
+                        type: number
+                        description: Volume in the specified token over the last 30 days.
+                        example: 0.37639022678431755
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /stats/strategies:
+    get:
+      summary: 📏Stats by strategies
+      description: Retrieves statistics by strategies.
+      operationId: getStatsByStrategies
+      tags:
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  1Inch:
+                    type: number
+                    description: Volume for 1Inch strategy.
+                    example: 0
+                  FireBird:
+                    type: number
+                    description: Volume for FireBird strategy.
+                    example: 0
+                  Odos:
+                    type: number
+                    description: Volume for Odos strategy.
+                    example: 0
+                  1Inch Fusion:
+                    type: number
+                    description: Volume for 1Inch Fusion strategy.
+                    example: 0
+                  Binance:
+                    type: number
+                    description: Volume for Binance CEX strategy.
+                    example: 0
+                  1Inch V6:
+                    type: number
+                    description: Volume for 1Inch V6 strategy.
+                    example: 0
+                  Paraswap:
+                    type: number
+                    description: Volume for Paraswap strategy.
+                    example: 6
+                  OpenOcean:
+                    type: number
+                    description: Volume for OpenOcean strategy.
+                    example: 0
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /stats/pools:
+    get:
+      summary: 🌊Stats for pools
+      description: Retrieves statistics for pools.
+      operationId: getStatsForPools
+      tags:
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    TotalTrades:
+                      type: integer
+                      description: The total number of trades executed.
+                      example: 6
+                    24hTrades:
+                      type: integer
+                      description: Number of trades executed over the last 24 hours.
+                      example: 0
+                    7dTrades:
+                      type: integer
+                      description: Number of trades executed over the last 7 days.
+                      example: 6
+                    30dTrades:
+                      type: integer
+                      description: Number of trades executed over the last 30 days.
+                      example: 6
+                    24hProfitUsd:
+                      type: number
+                      description: Profit in USD over the last 24 hours.
+                      example: 0
+                    24hProfitBTC:
+                      type: number
+                      description: Profit in BTC over the last 24 hours.
+                      example: 0
+                    24hProfitETH:
+                      type: number
+                      description: Profit in ETH over the last 24 hours.
+                      example: 0
+                    7dProfitUsd:
+                      type: number
+                      description: Profit in USD over the last 7 days.
+                      example: -0.6330970418410466
+                    7dProfitBTC:
+                      type: number
+                      description: Profit in BTC over the last 7 days.
+                      example: -0.000009763664626457666
+                    7dProfitETH:
+                      type: number
+                      description: Profit in ETH over the last 7 days.
+                      example: -0.00017953323911339378
+                    30dProfitUsd:
+                      type: number
+                      description: Profit in USD over the last 30 days.
+                      example: -0.6330970418410466
+                    30dProfitBTC:
+                      type: number
+                      description: Profit in BTC over the last 30 days.
+                      example: -0.000009763664626457666
+                    30dProfitETH:
+                      type: number
+                      description: Profit in ETH over the last 30 days.
+                      example: -0.00017953323911339378
+                    TotalProfitUsd:
+                      type: number
+                      description: Total profit in USD.
+                      example: -0.6330970418410466
+                    TotalProfitBTC:
+                      type: number
+                      description: Total profit in BTC.
+                      example: -0.000009763664626457666
+                    TotalProfitETH:
+                      type: number
+                      description: Total profit in ETH.
+                      example: -0.00017953323911339378
+                    24hRevenueUsd:
+                      type: number
+                      description: Revenue in USD over the last 24 hours.
+                      example: 0
+                    24hRevenueBTC:
+                      type: number
+                      description: Revenue in BTC over the last 24 hours.
+                      example: 0
+                    24hRevenueETH:
+                      type: number
+                      description: Revenue in ETH over the last 24 hours.
+                      example: 0
+                    7dRevenueUsd:
+                      type: number
+                      description: Revenue in USD over the last 7 days.
+                      example: 0.2860639394672033
+                    7dRevenueBTC:
+                      type: number
+                      description: Revenue in BTC over the last 7 days.
+                      example: 0.00000441353958564768
+                    7dRevenueETH:
+                      type: number
+                      description: Revenue in ETH over the last 7 days.
+                      example: 0.00008123256149832993
+                    30dRevenueUsd:
+                      type: number
+                      description: Revenue in USD over the last 30 days.
+                      example: 0.2860639394672033
+                    30dRevenueBTC:
+                      type: number
+                      description: Revenue in BTC over the last 30 days.
+                      example: 0.00000441353958564768
+                    30dRevenueETH:
+                      type: number
+                      description: Revenue in ETH over the last 30 days.
+                      example: 0.00008123256149832993
+                    TotalRevenueUsd:
+                      type: number
+                      description: Total revenue in USD.
+                      example: 0.2860639394672033
+                    TotalRevenueBTC:
+                      type: number
+                      description: Total revenue in BTC.
+                      example: 0.00000441353958564768
+                    TotalRevenueETH:
+                      type: number
+                      description: Total revenue in ETH.
+                      example: 0.00008123256149832993
+                    24hVolumeUsd:
+                      type: number
+                      description: Trading volume in USD over the last 24 hours.
+                      example: 0
+                    24hVolumeBTC:
+                      type: number
+                      description: Trading volume in BTC over the last 24 hours.
+                      example: 0
+                    24hVolumeETH:
+                      type: number
+                      description: Trading volume in ETH over the last 24 hours.
+                      example: 0
+                    7dVolumeUsd:
+                      type: number
+                      description: Trading volume in USD over the last 7 days.
+                      example: 123.19592904810462
+                    7dVolumeBTC:
+                      type: number
+                      description: Trading volume in BTC over the last 7 days.
+                      example: 0.001901016565159535
+                    7dVolumeETH:
+                      type: number
+                      description: Trading volume in ETH over the last 7 days.
+                      example: 0.034965292987952104
+                    30dVolumeUsd:
+                      type: number
+                      description: Trading volume in USD over the last 30 days.
+                      example: 123.19592904810462
+                    30dVolumeBTC:
+                      type: number
+                      description: Trading volume in BTC over the last 30 days.
+                      example: 0.001901016565159535
+                    30dVolumeETH:
+                      type: number
+                      description: Trading volume in ETH over the last 30 days.
+                      example: 0.034965292987952104
+                    TotalVolumeUsd:
+                      type: number
+                      description: Total trading volume in USD.
+                      example: 123.19592904810462
+                    TotalVolumeBTC:
+                      type: number
+                      description: Total trading volume in BTC.
+                      example: 0.001901016565159535
+                    TotalVolumeETH:
+                      type: number
+                      description: Total trading volume in ETH.
+                      example: 0.034965292987952104
+                    24hFeeUsd:
+                      type: number
+                      description: Gas fees in USD over the last 24 hours.
+                      example: 0
+                    24hFeeBTC:
+                      type: number
+                      description: Gas fees in BTC over the last 24 hours.
+                      example: 0
+                    24hFeeETH:
+                      type: number
+                      description: Gas fees in ETH over the last 24 hours.
+                      example: 0
+                    7dFeeUsd:
+                      type: number
+                      description: Gas fees in USD over the last 7 days.
+                      example: 0.919161621775
+                    7dFeeBTC:
+                      type: number
+                      description: Gas fees in BTC over the last 7 days.
+                      example: 0.000014177214219461251
+                    7dFeeETH:
+                      type: number
+                      description: Gas fees in ETH over the last 7 days.
+                      example: 0.00026076598563977904
+                    30dFeeUsd:
+                      type: number
+                      description: Gas fees in USD over the last 30 days.
+                      example: 0.919161621775
+                    30dFeeBTC:
+                      type: number
+                      description: Gas fees in BTC over the last 30 days.
+                      example: 0.000014177214219461251
+                    30dFeeETH:
+                      type: number
+                      description: Gas fees in ETH over the last 30 days.
+                      example: 0.00026076598563977904
+                    TotalFeeUsd:
+                      type: number
+                      description: Total gas fees in USD.
+                      example: 0.919161621775
+                    TotalFeeBTC:
+                      type: number
+                      description: Total gas fees in BTC.
+                      example: 0.000014177214219461251
+                    TotalFeeETH:
+                      type: number
+                      description: Total gas fees in ETH.
+                      example: 0.00026076598563977904
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /stats/pools/{pool}:
+    get:
+      summary: 🚰Stats for single pool
+      description: Retrieves trades statistics for a single pool.
+      operationId: getStatsForSinglePool
+      tags:
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
+      parameters:
+        - name: pool
+          in: path
+          required: true
+          description: Pool id.
+          schema:
+            type: string
+            example: '0x448cfb80ff53e628b30eda4f4214a42a26dbe6c7000100000000000000000000'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  TotalTrades:
+                    type: integer
+                    description: The total number of trades executed.
+                    example: 6
+                  24hTrades:
+                    type: integer
+                    description: Number of trades executed over the last 24 hours.
+                    example: 0
+                  7dTrades:
+                    type: integer
+                    description: Number of trades executed over the last 7 days.
+                    example: 6
+                  30dTrades:
+                    type: integer
+                    description: Number of trades executed over the last 30 days.
+                    example: 6
+                  24hProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 24 hours.
+                    example: 0
+                  24hProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 24 hours.
+                    example: 0
+                  24hProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 24 hours.
+                    example: 0
+                  7dProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 7 days.
+                    example: -0.6330970418410466
+                  7dProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 7 days.
+                    example: -0.000009763664626457666
+                  7dProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 7 days.
+                    example: -0.00017953323911339378
+                  30dProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 30 days.
+                    example: -0.6330970418410466
+                  30dProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 30 days.
+                    example: -0.000009763664626457666
+                  30dProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 30 days.
+                    example: -0.00017953323911339378
+                  TotalProfitUsd:
+                    type: number
+                    description: Total profit in USD.
+                    example: -0.6330970418410466
+                  TotalProfitBTC:
+                    type: number
+                    description: Total profit in BTC.
+                    example: -0.000009763664626457666
+                  TotalProfitETH:
+                    type: number
+                    description: Total profit in ETH.
+                    example: -0.00017953323911339378
+                  24hRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 24 hours.
+                    example: 0
+                  24hRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 24 hours.
+                    example: 0
+                  24hRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 24 hours.
+                    example: 0
+                  7dRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 7 days.
+                    example: 0.2860639394672033
+                  7dRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 7 days.
+                    example: 0.00000441353958564768
+                  7dRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 7 days.
+                    example: 0.00008123256149832993
+                  30dRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 30 days.
+                    example: 0.2860639394672033
+                  30dRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 30 days.
+                    example: 0.00000441353958564768
+                  30dRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 30 days.
+                    example: 0.00008123256149832993
+                  TotalRevenueUsd:
+                    type: number
+                    description: Total revenue in USD.
+                    example: 0.2860639394672033
+                  TotalRevenueBTC:
+                    type: number
+                    description: Total revenue in BTC.
+                    example: 0.00000441353958564768
+                  TotalRevenueETH:
+                    type: number
+                    description: Total revenue in ETH.
+                    example: 0.00008123256149832993
+                  24hVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 24 hours.
+                    example: 0
+                  24hVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 24 hours.
+                    example: 0
+                  24hVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 24 hours.
+                    example: 0
+                  7dVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 7 days.
+                    example: 123.19592904810462
+                  7dVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 7 days.
+                    example: 0.001901016565159535
+                  7dVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 7 days.
+                    example: 0.034965292987952104
+                  30dVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 30 days.
+                    example: 123.19592904810462
+                  30dVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 30 days.
+                    example: 0.001901016565159535
+                  30dVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 30 days.
+                    example: 0.034965292987952104
+                  TotalVolumeUsd:
+                    type: number
+                    description: Total trading volume in USD.
+                    example: 123.19592904810462
+                  TotalVolumeBTC:
+                    type: number
+                    description: Total trading volume in BTC.
+                    example: 0.001901016565159535
+                  TotalVolumeETH:
+                    type: number
+                    description: Total trading volume in ETH.
+                    example: 0.034965292987952104
+                  24hFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 24 hours.
+                    example: 0
+                  24hFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 24 hours.
+                    example: 0
+                  24hFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 24 hours.
+                    example: 0
+                  7dFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 7 days.
+                    example: 0.919161621775
+                  7dFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 7 days.
+                    example: 0.000014177214219461251
+                  7dFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 7 days.
+                    example: 0.00026076598563977904
+                  30dFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 30 days.
+                    example: 0.919161621775
+                  30dFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 30 days.
+                    example: 0.000014177214219461251
+                  30dFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 30 days.
+                    example: 0.00026076598563977904
+                  TotalFeeUsd:
+                    type: number
+                    description: Total gas fees in USD.
+                    example: 0.919161621775
+                  TotalFeeBTC:
+                    type: number
+                    description: Total gas fees in BTC.
+                    example: 0.000014177214219461251
+                  TotalFeeETH:
+                    type: number
+                    description: Total gas fees in ETH.
+                    example: 0.00026076598563977904
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /stats/pairs:
+    get:
+      summary: 🅿️Stats for pairs
+      description: Retrieves trade statistics for pairs.
+      operationId: getStatsForPairs
+      tags:
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    TotalTrades:
+                      type: integer
+                      description: The total number of trades executed.
+                      example: 2
+                    24hTrades:
+                      type: integer
+                      description: Number of trades executed over the last 24 hours.
+                      example: 0
+                    7dTrades:
+                      type: integer
+                      description: Number of trades executed over the last 7 days.
+                      example: 2
+                    30dTrades:
+                      type: integer
+                      description: Number of trades executed over the last 30 days.
+                      example: 2
+                    24hProfitUsd:
+                      type: number
+                      description: Profit in USD over the last 24 hours.
+                      example: 0
+                    24hProfitBTC:
+                      type: number
+                      description: Profit in BTC over the last 24 hours.
+                      example: 0
+                    24hProfitETH:
+                      type: number
+                      description: Profit in ETH over the last 24 hours.
+                      example: 0
+                    7dProfitUsd:
+                      type: number
+                      description: Profit in USD over the last 7 days.
+                      example: -0.20993224106979275
+                    7dProfitBTC:
+                      type: number
+                      description: Profit in BTC over the last 7 days.
+                      example: -0.0000032210901552586563
+                    7dProfitETH:
+                      type: number
+                      description: Profit in ETH over the last 7 days.
+                      example: -0.00005921962987193946
+                    30dProfitUsd:
+                      type: number
+                      description: Profit in USD over the last 30 days.
+                      example: -0.20993224106979275
+                    30dProfitBTC:
+                      type: number
+                      description: Profit in BTC over the last 30 days.
+                      example: -0.0000032210901552586563
+                    30dProfitETH:
+                      type: number
+                      description: Profit in ETH over the last 30 days.
+                      example: -0.00005921962987193946
+                    TotalProfitUsd:
+                      type: number
+                      description: Total profit in USD.
+                      example: -0.20993224106979275
+                    TotalProfitBTC:
+                      type: number
+                      description: Total profit in BTC.
+                      example: -0.0000032210901552586563
+                    TotalProfitETH:
+                      type: number
+                      description: Total profit in ETH.
+                      example: -0.00005921962987193946
+                    24hRevenueUsd:
+                      type: number
+                      description: Revenue in USD over the last 24 hours.
+                      example: 0
+                    24hRevenueBTC:
+                      type: number
+                      description: Revenue in BTC over the last 24 hours.
+                      example: 0
+                    24hRevenueETH:
+                      type: number
+                      description: Revenue in ETH over the last 24 hours.
+                      example: 0
+                    7dRevenueUsd:
+                      type: number
+                      description: Revenue in USD over the last 7 days.
+                      example: 0.1071146763707072
+                    7dRevenueBTC:
+                      type: number
+                      description: Revenue in BTC over the last 7 days.
+                      example: 0.0000016435085456373307
+                    7dRevenueETH:
+                      type: number
+                      description: Revenue in ETH over the last 7 days.
+                      example: 0.000030215979601956845
+                    30dRevenueUsd:
+                      type: number
+                      description: Revenue in USD over the last 30 days.
+                      example: 0.1071146763707072
+                    30dRevenueBTC:
+                      type: number
+                      description: Revenue in BTC over the last 30 days.
+                      example: 0.0000016435085456373307
+                    30dRevenueETH:
+                      type: number
+                      description: Revenue in ETH over the last 30 days.
+                      example: 0.000030215979601956845
+                    TotalRevenueUsd:
+                      type: number
+                      description: Total revenue in USD.
+                      example: 0.1071146763707072
+                    TotalRevenueBTC:
+                      type: number
+                      description: Total revenue in BTC.
+                      example: 0.0000016435085456373307
+                    TotalRevenueETH:
+                      type: number
+                      description: Total revenue in ETH.
+                      example: 0.000030215979601956845
+                    24hVolumeUsd:
+                      type: number
+                      description: Trading volume in USD over the last 24 hours.
+                      example: 0
+                    24hVolumeBTC:
+                      type: number
+                      description: Trading volume in BTC over the last 24 hours.
+                      example: 0
+                    24hVolumeETH:
+                      type: number
+                      description: Trading volume in ETH over the last 24 hours.
+                      example: 0
+                    7dVolumeUsd:
+                      type: number
+                      description: Trading volume in USD over the last 7 days.
+                      example: 51.0179511365602
+                    7dVolumeBTC:
+                      type: number
+                      description: Trading volume in BTC over the last 7 days.
+                      example: 0.0007827918772202721
+                    7dVolumeETH:
+                      type: number
+                      description: Trading volume in ETH over the last 7 days.
+                      example: 0.01439163833859445
+                    30dVolumeUsd:
+                      type: number
+                      description: Trading volume in USD over the last 30 days.
+                      example: 51.0179511365602
+                    30dVolumeBTC:
+                      type: number
+                      description: Trading volume in BTC over the last 30 days.
+                      example: 0.0007827918772202721
+                    30dVolumeETH:
+                      type: number
+                      description: Trading volume in ETH over the last 30 days.
+                      example: 0.01439163833859445
+                    TotalVolumeUsd:
+                      type: number
+                      description: Total trading volume in USD.
+                      example: 51.0179511365602
+                    TotalVolumeBTC:
+                      type: number
+                      description: Total trading volume in BTC.
+                      example: 0.0007827918772202721
+                    TotalVolumeETH:
+                      type: number
+                      description: Total trading volume in ETH.
+                      example: 0.01439163833859445
+                    24hFeeUsd:
+                      type: number
+                      description: Gas fees in USD over the last 24 hours.
+                      example: 0
+                    24hFeeBTC:
+                      type: number
+                      description: Gas fees in BTC over the last 24 hours.
+                      example: 0
+                    24hFeeETH:
+                      type: number
+                      description: Gas fees in ETH over the last 24 hours.
+                      example: 0
+                    7dFeeUsd:
+                      type: number
+                      description: Gas fees in USD over the last 7 days.
+                      example: 0.31704691744049995
+                    7dFeeBTC:
+                      type: number
+                      description: Gas fees in BTC over the last 7 days.
+                      example: 0.000004864598700895986
+                    7dFeeETH:
+                      type: number
+                      description: Gas fees in ETH over the last 7 days.
+                      example: 0.0000894356094738963
+                    30dFeeUsd:
+                      type: number
+                      description: Gas fees in USD over the last 30 days.
+                      example: 0.31704691744049995
+                    30dFeeBTC:
+                      type: number
+                      description: Gas fees in BTC over the last 30 days.
+                      example: 0.000004864598700895986
+                    30dFeeETH:
+                      type: number
+                      description: Gas fees in ETH over the last 30 days.
+                      example: 0.0000894356094738963
+                    TotalFeeUsd:
+                      type: number
+                      description: Total gas fees in USD.
+                      example: 0.31704691744049995
+                    TotalFeeBTC:
+                      type: number
+                      description: Total gas fees in BTC.
+                      example: 0.000004864598700895986
+                    TotalFeeETH:
+                      type: number
+                      description: Total gas fees in ETH.
+                      example: 0.0000894356094738963
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /stats/pairs/{pair}:
+    get:
+      summary: 1️⃣Stats for single pair
+      description: Retrieves trade statistics for a single pair.
+      operationId: getStatsForSinglePair
+      tags:
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
+      parameters:
+        - name: pair
+          in: path
+          required: true
+          description: Pair identifier.
+          schema:
+            type: string
+            example: '0x0d500b1d8e8ef31e21c99d1db9a644d3adf1270-0xc2132d05d31c914a87c6611c10748aeb04b58e8f'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  TotalTrades:
+                    type: integer
+                    description: The total number of trades executed.
+                    example: 2
+                  24hTrades:
+                    type: integer
+                    description: Number of trades executed over the last 24 hours.
+                    example: 0
+                  7dTrades:
+                    type: integer
+                    description: Number of trades executed over the last 7 days.
+                    example: 2
+                  30dTrades:
+                    type: integer
+                    description: Number of trades executed over the last 30 days.
+                    example: 2
+                  24hProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 24 hours.
+                    example: 0
+                  24hProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 24 hours.
+                    example: 0
+                  24hProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 24 hours.
+                    example: 0
+                  7dProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 7 days.
+                    example: -0.20993224106979275
+                  7dProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 7 days.
+                    example: -0.0000032210901552586563
+                  7dProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 7 days.
+                    example: -0.00005921962987193946
+                  30dProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 30 days.
+                    example: -0.20993224106979275
+                  30dProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 30 days.
+                    example: -0.0000032210901552586563
+                  30dProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 30 days.
+                    example: -0.00005921962987193946
+                  TotalProfitUsd:
+                    type: number
+                    description: Total profit in USD.
+                    example: -0.20993224106979275
+                  TotalProfitBTC:
+                    type: number
+                    description: Total profit in BTC.
+                    example: -0.0000032210901552586563
+                  TotalProfitETH:
+                    type: number
+                    description: Total profit in ETH.
+                    example: -0.00005921962987193946
+                  24hRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 24 hours.
+                    example: 0
+                  24hRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 24 hours.
+                    example: 0
+                  24hRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 24 hours.
+                    example: 0
+                  7dRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 7 days.
+                    example: 0.1071146763707072
+                  7dRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 7 days.
+                    example: 0.0000016435085456373307
+                  7dRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 7 days.
+                    example: 0.000030215979601956845
+                  30dRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 30 days.
+                    example: 0.1071146763707072
+                  30dRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 30 days.
+                    example: 0.0000016435085456373307
+                  30dRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 30 days.
+                    example: 0.000030215979601956845
+                  TotalRevenueUsd:
+                    type: number
+                    description: Total revenue in USD.
+                    example: 0.1071146763707072
+                  TotalRevenueBTC:
+                    type: number
+                    description: Total revenue in BTC.
+                    example: 0.0000016435085456373307
+                  TotalRevenueETH:
+                    type: number
+                    description: Total revenue in ETH.
+                    example: 0.000030215979601956845
+                  24hVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 24 hours.
+                    example: 0
+                  24hVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 24 hours.
+                    example: 0
+                  24hVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 24 hours.
+                    example: 0
+                  7dVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 7 days.
+                    example: 51.0179511365602
+                  7dVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 7 days.
+                    example: 0.0007827918772202721
+                  7dVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 7 days.
+                    example: 0.01439163833859445
+                  30dVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 30 days.
+                    example: 51.0179511365602
+                  30dVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 30 days.
+                    example: 0.0007827918772202721
+                  30dVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 30 days.
+                    example: 0.01439163833859445
+                  TotalVolumeUsd:
+                    type: number
+                    description: Total trading volume in USD.
+                    example: 51.0179511365602
+                  TotalVolumeBTC:
+                    type: number
+                    description: Total trading volume in BTC.
+                    example: 0.0007827918772202721
+                  TotalVolumeETH:
+                    type: number
+                    description: Total trading volume in ETH.
+                    example: 0.01439163833859445
+                  24hFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 24 hours.
+                    example: 0
+                  24hFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 24 hours.
+                    example: 0
+                  24hFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 24 hours.
+                    example: 0
+                  7dFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 7 days.
+                    example: 0.31704691744049995
+                  7dFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 7 days.
+                    example: 0.000004864598700895986
+                  7dFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 7 days.
+                    example: 0.0000894356094738963
+                  30dFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 30 days.
+                    example: 0.31704691744049995
+                  30dFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 30 days.
+                    example: 0.000004864598700895986
+                  30dFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 30 days.
+                    example: 0.0000894356094738963
+                  TotalFeeUsd:
+                    type: number
+                    description: Total gas fees in USD.
+                    example: 0.31704691744049995
+                  TotalFeeBTC:
+                    type: number
+                    description: Total gas fees in BTC.
+                    example: 0.000004864598700895986
+                  TotalFeeETH:
+                    type: number
+                    description: Total gas fees in ETH.
+                    example: 0.0000894356094738963
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /stats/tokens:
+    get:
+      summary: 💲Stats for tokens
+      description: Retrieves trade statistics for tokens.
+      operationId: getStatsForTokens
+      tags:
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    TotalTrades:
+                      type: integer
+                      description: The total number of trades executed.
+                      example: 2
+                    24hTrades:
+                      type: integer
+                      description: Number of trades executed over the last 24 hours.
+                      example: 0
+                    7dTrades:
+                      type: integer
+                      description: Number of trades executed over the last 7 days.
+                      example: 2
+                    30dTrades:
+                      type: integer
+                      description: Number of trades executed over the last 30 days.
+                      example: 2
+                    24hProfitUsd:
+                      type: number
+                      description: Profit in USD over the last 24 hours.
+                      example: 0
+                    24hProfitBTC:
+                      type: number
+                      description: Profit in BTC over the last 24 hours.
+                      example: 0
+                    24hProfitETH:
+                      type: number
+                      description: Profit in ETH over the last 24 hours.
+                      example: 0
+                    7dProfitUsd:
+                      type: number
+                      description: Profit in USD over the last 7 days.
+                      example: -0.20993224106979275
+                    7dProfitBTC:
+                      type: number
+                      description: Profit in BTC over the last 7 days.
+                      example: -0.0000032210901552586563
+                    7dProfitETH:
+                      type: number
+                      description: Profit in ETH over the last 7 days.
+                      example: -0.00005921962987193946
+                    30dProfitUsd:
+                      type: number
+                      description: Profit in USD over the last 30 days.
+                      example: -0.20993224106979275
+                    30dProfitBTC:
+                      type: number
+                      description: Profit in BTC over the last 30 days.
+                      example: -0.0000032210901552586563
+                    30dProfitETH:
+                      type: number
+                      description: Profit in ETH over the last 30 days.
+                      example: -0.00005921962987193946
+                    TotalProfitUsd:
+                      type: number
+                      description: Total profit in USD.
+                      example: -0.20993224106979275
+                    TotalProfitBTC:
+                      type: number
+                      description: Total profit in BTC.
+                      example: -0.0000032210901552586563
+                    TotalProfitETH:
+                      type: number
+                      description: Total profit in ETH.
+                      example: -0.00005921962987193946
+                    24hRevenueUsd:
+                      type: number
+                      description: Revenue in USD over the last 24 hours.
+                      example: 0
+                    24hRevenueBTC:
+                      type: number
+                      description: Revenue in BTC over the last 24 hours.
+                      example: 0
+                    24hRevenueETH:
+                      type: number
+                      description: Revenue in ETH over the last 24 hours.
+                      example: 0
+                    7dRevenueUsd:
+                      type: number
+                      description: Revenue in USD over the last 7 days.
+                      example: 0.1071146763707072
+                    7dRevenueBTC:
+                      type: number
+                      description: Revenue in BTC over the last 7 days.
+                      example: 0.0000016435085456373307
+                    7dRevenueETH:
+                      type: number
+                      description: Revenue in ETH over the last 7 days.
+                      example: 0.000030215979601956845
+                    30dRevenueUsd:
+                      type: number
+                      description: Revenue in USD over the last 30 days.
+                      example: 0.1071146763707072
+                    30dRevenueBTC:
+                      type: number
+                      description: Revenue in BTC over the last 30 days.
+                      example: 0.0000016435085456373307
+                    30dRevenueETH:
+                      type: number
+                      description: Revenue in ETH over the last 30 days.
+                      example: 0.000030215979601956845
+                    TotalRevenueUsd:
+                      type: number
+                      description: Total revenue in USD.
+                      example: 0.1071146763707072
+                    TotalRevenueBTC:
+                      type: number
+                      description: Total revenue in BTC.
+                      example: 0.0000016435085456373307
+                    TotalRevenueETH:
+                      type: number
+                      description: Total revenue in ETH.
+                      example: 0.000030215979601956845
+                    24hVolumeUsd:
+                      type: number
+                      description: Trading volume in USD over the last 24 hours.
+                      example: 0
+                    24hVolumeBTC:
+                      type: number
+                      description: Trading volume in BTC over the last 24 hours.
+                      example: 0
+                    24hVolumeETH:
+                      type: number
+                      description: Trading volume in ETH over the last 24 hours.
+                      example: 0
+                    7dVolumeUsd:
+                      type: number
+                      description: Trading volume in USD over the last 7 days.
+                      example: 51.0179511365602
+                    7dVolumeBTC:
+                      type: number
+                      description: Trading volume in BTC over the last 7 days.
+                      example: 0.0007827918772202721
+                    7dVolumeETH:
+                      type: number
+                      description: Trading volume in ETH over the last 7 days.
+                      example: 0.01439163833859445
+                    30dVolumeUsd:
+                      type: number
+                      description: Trading volume in USD over the last 30 days.
+                      example: 51.0179511365602
+                    30dVolumeBTC:
+                      type: number
+                      description: Trading volume in BTC over the last 30 days.
+                      example: 0.0007827918772202721
+                    30dVolumeETH:
+                      type: number
+                      description: Trading volume in ETH over the last 30 days.
+                      example: 0.01439163833859445
+                    TotalVolumeUsd:
+                      type: number
+                      description: Total trading volume in USD.
+                      example: 51.0179511365602
+                    TotalVolumeBTC:
+                      type: number
+                      description: Total trading volume in BTC.
+                      example: 0.0007827918772202721
+                    TotalVolumeETH:
+                      type: number
+                      description: Total trading volume in ETH.
+                      example: 0.01439163833859445
+                    24hFeeUsd:
+                      type: number
+                      description: Gas fees in USD over the last 24 hours.
+                      example: 0
+                    24hFeeBTC:
+                      type: number
+                      description: Gas fees in BTC over the last 24 hours.
+                      example: 0
+                    24hFeeETH:
+                      type: number
+                      description: Gas fees in ETH over the last 24 hours.
+                      example: 0
+                    7dFeeUsd:
+                      type: number
+                      description: Gas fees in USD over the last 7 days.
+                      example: 0.31704691744049995
+                    7dFeeBTC:
+                      type: number
+                      description: Gas fees in BTC over the last 7 days.
+                      example: 0.000004864598700895986
+                    7dFeeETH:
+                      type: number
+                      description: Gas fees in ETH over the last 7 days.
+                      example: 0.0000894356094738963
+                    30dFeeUsd:
+                      type: number
+                      description: Gas fees in USD over the last 30 days.
+                      example: 0.31704691744049995
+                    30dFeeBTC:
+                      type: number
+                      description: Gas fees in BTC over the last 30 days.
+                      example: 0.000004864598700895986
+                    30dFeeETH:
+                      type: number
+                      description: Gas fees in ETH over the last 30 days.
+                      example: 0.0000894356094738963
+                    TotalFeeUsd:
+                      type: number
+                      description: Total gas fees in USD.
+                      example: 0.31704691744049995
+                    TotalFeeBTC:
+                      type: number
+                      description: Total gas fees in BTC.
+                      example: 0.000004864598700895986
+                    TotalFeeETH:
+                      type: number
+                      description: Total gas fees in ETH.
+                      example: 0.0000894356094738963
+                    24hProfit:
+                      type: number
+                      description: Profit in unspecified currency over the last 24 hours.
+                      example: 0
+                    7dProfit:
+                      type: number
+                      description: Profit in unspecified currency over the last 7 days.
+                      example: -0.0015487618652385874
+                    30dProfit:
+                      type: number
+                      description: Profit in unspecified currency over the last 30 days.
+                      example: -0.0015487618652385874
+                    24hFee:
+                      type: number
+                      description: Gas fees in unspecified currency over the last 24 hours.
+                      example: 0
+                    7dFee:
+                      type: number
+                      description: Gas fees in unspecified currency over the last 7 days.
+                      example: 0.00052980226
+                    30dFee:
+                      type: number
+                      description: Gas fees in unspecified currency over the last 30 days.
+                      example: 0.00052980226
+                    24hRevenue:
+                      type: number
+                      description: Revenue in unspecified currency over the last 24 hours.
+                      example: 0
+                    7dRevenue:
+                      type: number
+                      description: Revenue in unspecified currency over the last 7 days.
+                      example: 0.0007902267843175881
+                    30dRevenue:
+                      type: number
+                      description: Revenue in unspecified currency over the last 30 days.
+                      example: 0.0007902267843175881
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /stats/tokens/{token}:
+    get:
+      summary: 💵Stats for single token
+      description: Retrieves trades statistics for a single token.
+      operationId: getStatsForSingleToken
+      tags:
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
+      parameters:
+        - name: token
+          in: path
+          required: true
+          description: Token address.
+          schema:
+            type: string
+            example: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  TotalTrades:
+                    type: integer
+                    description: The total number of trades executed.
+                    example: 2
+                  24hTrades:
+                    type: integer
+                    description: Number of trades executed in the last 24 hours.
+                    example: 0
+                  7dTrades:
+                    type: integer
+                    description: Number of trades executed in the last 7 days.
+                    example: 2
+                  30dTrades:
+                    type: integer
+                    description: Number of trades executed in the last 30 days.
+                    example: 2
+                  24hProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 24 hours.
+                    example: 0
+                  24hProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 24 hours.
+                    example: 0
+                  24hProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 24 hours.
+                    example: 0
+                  7dProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 7 days.
+                    example: -0.20993224106979275
+                  7dProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 7 days.
+                    example: -0.0000032210901552586563
+                  7dProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 7 days.
+                    example: -0.00005921962987193946
+                  30dProfitUsd:
+                    type: number
+                    description: Profit in USD over the last 30 days.
+                    example: -0.20993224106979275
+                  30dProfitBTC:
+                    type: number
+                    description: Profit in BTC over the last 30 days.
+                    example: -0.0000032210901552586563
+                  30dProfitETH:
+                    type: number
+                    description: Profit in ETH over the last 30 days.
+                    example: -0.00005921962987193946
+                  TotalProfitUsd:
+                    type: number
+                    description: Total profit in USD.
+                    example: -0.20993224106979275
+                  TotalProfitBTC:
+                    type: number
+                    description: Total profit in BTC.
+                    example: -0.0000032210901552586563
+                  TotalProfitETH:
+                    type: number
+                    description: Total profit in ETH.
+                    example: -0.00005921962987193946
+                  24hRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 24 hours.
+                    example: 0
+                  24hRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 24 hours.
+                    example: 0
+                  24hRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 24 hours.
+                    example: 0
+                  7dRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 7 days.
+                    example: 0.1071146763707072
+                  7dRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 7 days.
+                    example: 0.0000016435085456373307
+                  7dRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 7 days.
+                    example: 0.000030215979601956845
+                  30dRevenueUsd:
+                    type: number
+                    description: Revenue in USD over the last 30 days.
+                    example: 0.1071146763707072
+                  30dRevenueBTC:
+                    type: number
+                    description: Revenue in BTC over the last 30 days.
+                    example: 0.0000016435085456373307
+                  30dRevenueETH:
+                    type: number
+                    description: Revenue in ETH over the last 30 days.
+                    example: 0.000030215979601956845
+                  TotalRevenueUsd:
+                    type: number
+                    description: Total revenue in USD.
+                    example: 0.1071146763707072
+                  TotalRevenueBTC:
+                    type: number
+                    description: Total revenue in BTC.
+                    example: 0.0000016435085456373307
+                  TotalRevenueETH:
+                    type: number
+                    description: Total revenue in ETH.
+                    example: 0.000030215979601956845
+                  24hVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 24 hours.
+                    example: 0
+                  24hVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 24 hours.
+                    example: 0
+                  24hVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 24 hours.
+                    example: 0
+                  7dVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 7 days.
+                    example: 51.0179511365602
+                  7dVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 7 days.
+                    example: 0.0007827918772202721
+                  7dVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 7 days.
+                    example: 0.01439163833859445
+                  30dVolumeUsd:
+                    type: number
+                    description: Trading volume in USD over the last 30 days.
+                    example: 51.0179511365602
+                  30dVolumeBTC:
+                    type: number
+                    description: Trading volume in BTC over the last 30 days.
+                    example: 0.0007827918772202721
+                  30dVolumeETH:
+                    type: number
+                    description: Trading volume in ETH over the last 30 days.
+                    example: 0.01439163833859445
+                  TotalVolumeUsd:
+                    type: number
+                    description: Total trading volume in USD.
+                    example: 51.0179511365602
+                  TotalVolumeBTC:
+                    type: number
+                    description: Total trading volume in BTC.
+                    example: 0.0007827918772202721
+                  TotalVolumeETH:
+                    type: number
+                    description: Total trading volume in ETH.
+                    example: 0.01439163833859445
+                  24hFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 24 hours.
+                    example: 0
+                  24hFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 24 hours.
+                    example: 0
+                  24hFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 24 hours.
+                    example: 0
+                  7dFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 7 days.
+                    example: 0.31704691744049995
+                  7dFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 7 days.
+                    example: 0.000004864598700895986
+                  7dFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 7 days.
+                    example: 0.0000894356094738963
+                  30dFeeUsd:
+                    type: number
+                    description: Gas fees in USD over the last 30 days.
+                    example: 0.31704691744049995
+                  30dFeeBTC:
+                    type: number
+                    description: Gas fees in BTC over the last 30 days.
+                    example: 0.000004864598700895986
+                  30dFeeETH:
+                    type: number
+                    description: Gas fees in ETH over the last 30 days.
+                    example: 0.0000894356094738963
+                  TotalFeeUsd:
+                    type: number
+                    description: Total gas fees in USD.
+                    example: 0.31704691744049995
+                  TotalFeeBTC:
+                    type: number
+                    description: Total gas fees in BTC.
+                    example: 0.000004864598700895986
+                  TotalFeeETH:
+                    type: number
+                    description: Total gas fees in ETH.
+                    example: 0.0000894356094738963
+                  24hProfit:
+                    type: number
+                    description: Profit in unspecified currency over the last 24 hours.
+                    example: 0
+                  7dProfit:
+                    type: number
+                    description: Profit in unspecified currency over the last 7 days.
+                    example: -0.0015487618652385874
+                  30dProfit:
+                    type: number
+                    description: Profit in unspecified currency over the last 30 days.
+                    example: -0.0015487618652385874
+                  24hFee:
+                    type: number
+                    description: Gas fees in unspecified currency over the last 24 hours.
+                    example: 0
+                  7dFee:
+                    type: number
+                    description: Gas fees in unspecified currency over the last 7 days.
+                    example: 0.00052980226
+                  30dFee:
+                    type: number
+                    description: Gas fees in unspecified currency over the last 30 days.
+                    example: 0.00052980226
+                  24hRevenue:
+                    type: number
+                    description: Revenue in unspecified currency over the last 24 hours.
+                    example: 0
+                  7dRevenue:
+                    type: number
+                    description: Revenue in unspecified currency over the last 7 days.
+                    example: 0.0007902267843175881
+                  30dRevenue:
+                    type: number
+                    description: Revenue in unspecified currency over the last 30 days.
+                    example: 0.0007902267843175881
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /rewards:
+    get:
+      summary: 🎁Rewards
+      description: Retrieves rewards statistics.
+      operationId: getRewards
+      tags:
+        - Stats
+      servers:
+        - url: 'https://polygonrunbotdoprimocosta.xyz'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    amount:
+                      type: number
+                      description: The amount of the token rewarded.
+                      example: 85.72305316916028
+                    price:
+                      type: number
+                      description: The price of the token.
+                      example: 0.99934
+                    decimals:
+                      type: integer
+                      description: The number of decimals for the token.
+                      example: 18
+                    symbol:
+                      type: string
+                      description: The symbol of the token.
+                      example: 'USDT'
+                    address:
+                      type: string
+                      description: The address of the token.
+                      example: '0x55d398326f99059ff775485246999027b3197955'
+                    usdAmount:
+                      type: number
+                      description: The USD amount of the reward.
+                      example: 85.66647595406863
+                    ETHAmount:
+                      type: number
+                      description: The ETH amount of the reward.
+                      example: 0.0254647503519698
+                    BTCAmount:
+                      type: number
+                      description: The BTC amount of the reward.
+                      example: 0.0014008440723652907
+                    percentChange24h:
+                      type: number
+                      description: The percentage change in USD value over the last 24 hours.
+                      example: -0.0016173461719832234
+                    percentChange24hETH:
+                      type: number
+                      description: The percentage change in ETH value over the last 24 hours.
+                      example: -1.4172995292559754
+                    percentChange24hBTC:
+                      type: number
+                      description: The percentage change in BTC value over the last 24 hours.
+                      example: -0.019934023616197883
+                    usdAmountYesterday:
+                      type: number
+                      description: The USD amount of the reward yesterday.
+                      example: 85.66509043059911
+                    ETHAmountYesterday:
+                      type: number
+                      description: The ETH amount of the reward yesterday.
+                      example: 0.025103838565105122
+                    BTCAmountYesterday:
+                      type: number
+                      description: The BTC amount of the reward yesterday.
+                      example: 0.0014005648277770793
+                    rewardUsd:
+                      type: number
+                      description: The reward amount in USD.
+                      example: 85.66647595406863
+                    rewardETH:
+                      type: number
+                      description: The reward amount in ETH.
+                      example: 0.0254647503519698
+                    rewardBTC:
+                      type: number
+                      description: The reward amount in BTC.
+                      example: 0.0014008440723652907
+                    usdValue:
+                      type: string
+                      description: The USD value of the reward as a formatted string.
+                      example: '$85.66647595406863'
+                    ETHValue:
+                      type: string
+                      description: The ETH value of the reward as a formatted string.
+                      example: 'ETH0.0254647503519698'
+                    BTCValue:
+                      type: string
+                      description: The BTC value of the reward as a formatted string.
+                      example: 'BTC0.0014008440723652907'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /Rewards:
+    get:
+      summary: 🎁Rewards
+      description: Retrieves rewards statistics.
+      operationId: getRewards
+      tags:
+        - Rewards
+      servers:
+        - url: 'https://binancewrewrwrrfrsasdfew.xyz'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    user:
+                      type: string
+                      description: The user address.
+                      example: '0x282a2dfee159aa78ef4e28d2f9fdc9bd92a19b54'
+                    tokens:
+                      type: array
+                      description: List of token amounts.
+                      items:
+                        type: string
+                        example: '790226784317585'
+                    rewards:
+                      type: array
+                      description: List of reward token addresses.
+                      items:
+                        type: string
+                        example: '0x570A5D26f7765Ecb712C0924E4De545B89fD43dF'
+                    proof:
+                      type: array
+                      description: List of proof hashes.
+                      items:
+                        type: string
+                        example: '0x79d5b6aeb597770860e541ecd6d66b887044782bb959737c719425e4fdd6d435'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /rewards/{user}:
+    get:
+      summary: 🎁Rewards for single user
+      description: Retrieves rewards and proofs info by user address.
+      operationId: getRewardsForSingleUser
+      tags:
+        - Rewards
+      servers:
+        - url: 'https://binancewrewrwrrfrsasdfew.xyz'
+      parameters:
+        - name: user
+          in: path
+          required: true
+          description: User address.
+          schema:
+            type: string
+            example: '0x282a2dfee159aa78ef4e28d2f9fdc9bd92a19b54'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  proofs:
+                    type: array
+                    items:
+                      type: string
+                      example: '0x79d5b6aeb597770860e541ecd6d66b887044782bb959737c719425e4fdd6d435'
                   value:
-                    - date: '2023-09-11'
-                      timeOpen: '09:00'
-                      timeClose: '18:00'
-                    - date: '2023-09-12'
-                      timeOpen: '09:00'
-                      timeClose: '18:00'
-                    - date: '2023-09-13'
-                      timeOpen: '09:00'
-                      timeClose: '18:00'
-                    - date: '2023-09-17'
-                      timeOpen: '09:00'
-                      timeClose: '18:00'
-                closed:
-                  summary: The museum is closed
-                  value: []
-
+                    type: array
+                    items:
+                      anyOf:
+                        - type: string
+                        - type: array
+                          items:
+                            type: string
+                    example:
+                      - '0x282a2dfee159aa78ef4e28d2f9fdc9bd92a19b54'
+                      - [
+                          '0x570A5D26f7765Ecb712C0924E4De545B89fD43dF',
+                          '0xAD29AbB318791D579433D831ed122aFeAf29dcfe',
+                        ]
+                      - ['790226784317585', '317254414630311216']
+                  user_pool_rewards:
+                    type: object
+                    additionalProperties:
+                      type: array
+                      example:
+                        '0x570A5D26f7765Ecb712C0924E4De545B89fD43dF': '790226784317585'
+                        '0xAD29AbB318791D579433D831ed122aFeAf29dcfe': '317254414630311216'
         '400':
           description: Bad request
         '404':
           description: Not found
-  /special-events:
+  /referral_code/{user}:
+    get:
+      summary: 💯Referral code
+      description: Get referral code created by a user.
+      operationId: getReferralCode
+      tags:
+        - Rewards
+      servers:
+        - url: 'https://binancewrewrwrrfrsasdfew.xyz'
+      parameters:
+        - name: user
+          in: path
+          required: true
+          description: User address.
+          schema:
+            type: string
+            example: '0x282a2dfee159aa78ef4e28d2f9fdc9bd92a19b54'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  referral_code:
+                    type: string
+                    description: Referral code created by the user.
+                    example: '019cfa438dda08bb'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /referral_code/generate:
     post:
-      security: []
-      operationId: CreateSpecialEvent
-      summary: Create special event
+      summary: ✍️ Generate referral code
+      description: Generate a referral code for a user.
+      operationId: generateReferralCode
       tags:
-        - Events
+        - Rewards
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateSpecialEventRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/CreateSpecialEventRequestExample'
-      responses:
-        '200':
-          description: success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SpecialEventResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/CreateSpecialEventResponseExample'
-        '400':
-          description: Bad request
-        '404':
-          description: Not found
-    get:
-      summary: List special events
-      description: Return a list of upcoming special events at the museum.
-      security: []
-      operationId: listSpecialEvents
-      tags:
-        - Events
-      parameters:
-        - name: startDate
-          in: query
-          description: The starting date to retrieve future operating hours from. Defaults to today's date.
-          schema:
-            type: string
-            format: date
-            example: 2023-02-23
-        - name: endDate
-          in: query
-          description: The end of a date range to retrieve special events for. Defaults to 7 days after `startDate`.
-          schema:
-            type: string
-            format: date
-            example: 2023-04-18
-        - name: page
-          in: query
-          description: The page number to retrieve.
-          schema:
-            type: integer
-            default: 1
-            example: 2
-        - name: limit
-          in: query
-          description: The number of days per page.
-          schema:
-            type: integer
-            default: 10
-            maximum: 30
-            example: 15
-
+              type: object
+              properties:
+                wallet:
+                  type: string
+                  description: User's wallet address.
+                  example: '0x8a239732871adc8829ea2f47e94087c5fbad47b5'
+                referral_code:
+                  type: string
+                  description: Referral code to be assigned to the user (minimum 6 characters).
+                  example: '123456'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListSpecialEventsResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/ListSpecialEventsResponseExample'
+                type: object
+                properties:
+                  wallet:
+                    type: string
+                    example: '0x8a239732871adc8829ea2f47e94087c5fbad47b5'
+                  referral_code:
+                    type: string
+                    example: '123456'
         '400':
           description: Bad request
         '404':
           description: Not found
-  /special-events/{eventId}:
-    get:
-      summary: Get special event
-      description: Get details about a special event.
-      operationId: getSpecialEvent
-      tags:
-        - Events
-      parameters:
-        - $ref: '#/components/parameters/EventId'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SpecialEventResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/GetSpecialEventResponseExample'
-        '400':
-          description: Bad request
-        '404':
-          description: Not found
-    patch:
-      summary: Update special event
-      description: Update the details of a special event
-      operationId: updateSpecialEvent
-      tags:
-        - Events
-      parameters:
-        - $ref: '#/components/parameters/EventId'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UpdateSpecialEventRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/UpdateSpecialEventRequestExample'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SpecialEventResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/UpdateSpecialEventResponseExample'
-        '400':
-          description: Bad request
-        '404':
-          description: Not found
-    delete:
-      summary: Delete special event
-      description: Delete a special event from the collection. Allows museum to cancel planned events.
-      operationId: deleteSpecialEvent
-      tags:
-        - Events
-      parameters:
-        - $ref: '#/components/parameters/EventId'
-      responses:
-        '204':
-          description: Success - no content
-        '400':
-          description: Bad request
-        '401':
-          description: Unauthorized
-        '404':
-          description: Not found
-  /tickets:
-    post:
-      summary: Buy museum tickets
-      description: Purchase museum tickets for general entry or special events.
-      operationId: buyMuseumTickets
-      tags:
-        - Tickets
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BuyMuseumTicketsRequest'
-            examples:
-              general_entry:
-                $ref: '#/components/examples/BuyGeneralTicketsRequestExample'
-              event_entry:
-                $ref: '#/components/examples/BuyEventTicketsRequestExample'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BuyMuseumTicketsResponse'
-              examples:
-                general_entry:
-                  $ref: '#/components/examples/BuyGeneralTicketsResponseExample'
-                event_entry:
-                  $ref: '#/components/examples/BuyEventTicketsResponseExample'
-        '400':
-          description: Bad request
-        '404':
-          description: Not found
-  /tickets/{ticketId}/qr:
-    get:
-      summary: Get ticket QR code
-      description: Return an image of your ticket with scannable QR code. Used for event entry.
-      operationId: getTicketCode
-      tags:
-        - Tickets
-      parameters:
-        - $ref: '#/components/parameters/TicketId'
-      responses:
-        '200':
-          description: Scannable event ticket in image format
-          content:
-            image/png:
-              schema:
-                $ref: '#/components/schemas/GetTicketCodeResponse'
-        '400':
-          description: Bad request
-        '404':
-          description: Not found
-components:
-  schemas:
-    SpecialEvent:
-      description: Request payload for creating new special events at the museum.
-      properties:
-        name:
-          description: Name of the special event
-          type: string
-          example: Fossil lecture
-        location:
-          description: Location where the special event is held
-          type: string
-          example: Lecture theatre
-        eventDescription:
-          description: Description of the special event
-          type: string
-          example: Our panel of experts will share their favorite fossils and explain why they are so great.
-        dates:
-          description: List of planned dates for the special event
-          type: array
-          items:
-            type: string
-            format: date
-            example: 2024-03-29
-        price:
-          description: Price of a ticket for the special event
-          type: number
-          format: float
-          example: 12.50
-
-    TicketType:
-      description: Type of ticket being purchased. Use `general` for regular museum entry and `event` for tickets to special events.
-      type: string
-      enum:
-        - event
-        - general
-      example: event
-    Date:
-      type: string
-      format: date
-      example: 2023-10-29
-    Email:
-      description: Email address for ticket purchaser.
-      type: string
-      format: email
-      example: museum-lover@example.com
-    Phone:
-      description: Phone number for the ticket purchaser (optional).
-      type: string
-      example: +1(234)-567-8910
-    BuyMuseumTicketsRequest:
-      description: Request payload used for purchasing museum tickets.
-      type: object
-      properties:
-        ticketType:
-          $ref: '#/components/schemas/TicketType'
-        eventId:
-          description: Unique identifier for a special event. Required if purchasing tickets for the museum's special events.
-          $ref: '#/components/schemas/EventId'
-        ticketDate:
-          description: Date that the ticket is valid for.
-          $ref: '#/components/schemas/Date'
-        email:
-          $ref: '#/components/schemas/Email'
-        phone:
-          $ref: '#/components/schemas/Phone'
-      required:
-        - ticketType
-        - ticketDate
-        - email
-    TicketMessage:
-      description: Confirmation message after a ticket purchase.
-      type: string
-      example: Museum general entry ticket purchased
-    TicketId:
-      description: Unique identifier for museum ticket. Generated when purchased.
-      type: string
-      format: uuid
-      example: a54a57ca-36f8-421b-a6b4-2e8f26858a4c
-    TicketConfirmation:
-      description: Unique confirmation code used to verify ticket purchase.
-      type: string
-      example: ticket-event-a98c8f-7eb12
-    BuyMuseumTicketsResponse:
-      description: Details for a museum ticket after a successful purchase.
-      type: object
-      properties:
-        message:
-          $ref: '#/components/schemas/TicketMessage'
-        eventName:
-          $ref: '#/components/schemas/EventName'
-        ticketId:
-          $ref: '#/components/schemas/TicketId'
-        ticketType:
-          $ref: '#/components/schemas/TicketType'
-        ticketDate:
-          description: Date the ticket is valid for.
-          $ref: '#/components/schemas/Date'
-        confirmationCode:
-          $ref: '#/components/schemas/TicketConfirmation'
-      required:
-        - message
-        - ticketId
-        - ticketType
-        - ticketDate
-        - confirmationCode
-    GetTicketCodeResponse:
-      description: An image of a ticket with a QR code used for museum or event entry.
-      type: string
-      format: binary
-    GetMuseumHoursResponse:
-      description: List of museum operating hours for consecutive days.
-      type: array
-      items:
-        $ref: '#/components/schemas/MuseumDailyHours'
-    MuseumDailyHours:
-      description: Daily operating hours for the museum.
-      type: object
-      properties:
-        date:
-          description: Date the operating hours apply to.
-          $ref: '#/components/schemas/Date'
-          example: 2024-12-31
-        timeOpen:
-          type: string
-          pattern: '^([01]\d|2[0-3]):?([0-5]\d)$'
-          description: Time the museum opens on a specific date. Uses 24 hour time format (`HH:mm`).
-          example: 09:00
-        timeClose:
-          description: Time the museum closes on a specific date. Uses 24 hour time format (`HH:mm`).
-          type: string
-          pattern: '^([01]\d|2[0-3]):?([0-5]\d)$'
-          example: 18:00
-      required:
-        - date
-        - timeOpen
-        - timeClose
-    EventId:
-      description: Identifier for a special event.
-      type: string
-      format: uuid
-      example: 3be6453c-03eb-4357-ae5a-984a0e574a54
-    EventName:
-      type: string
-      description: Name of the special event
-      example: Pirate Coding Workshop
-    EventLocation:
-      type: string
-      description: Location where the special event is held
-      example: Computer Room
-    EventDescription:
-      type: string
-      description: Description of the special event
-      example: Captain Blackbeard shares his love of the C...language. And possibly Arrrrr (R lang).
-    EventDates:
-      type: array
-      items:
-        $ref: '#/components/schemas/Date'
-      description: List of planned dates for the special event
-    EventPrice:
-      description: Price of a ticket for the special event
-      type: number
-      format: float
-      example: 25
-    CreateSpecialEventRequest:
-      description: Request payload for creating new special events at the museum.
-      properties:
-        name:
-          $ref: '#/components/schemas/EventName'
-        location:
-          $ref: '#/components/schemas/EventLocation'
-        eventDescription:
-          $ref: '#/components/schemas/EventDescription'
-        dates:
-          $ref: '#/components/schemas/EventDates'
-        price:
-          $ref: '#/components/schemas/EventPrice'
-      required:
-        - name
-        - location
-        - eventDescription
-        - dates
-        - price
-    UpdateSpecialEventRequest:
-      description: Request payload for updating an existing special event. Only included fields are updated in the event.
-      properties:
-        name:
-          $ref: '#/components/schemas/EventName'
-        location:
-          $ref: '#/components/schemas/EventLocation'
-        eventDescription:
-          $ref: '#/components/schemas/EventDescription'
-        dates:
-          $ref: '#/components/schemas/EventDates'
-        price:
-          $ref: '#/components/schemas/EventPrice'
-    ListSpecialEventsResponse:
-      description: A list of upcoming special events
-      type: array
-      items:
-        $ref: '#/components/schemas/SpecialEventResponse'
-    SpecialEventResponse:
-      description: Information about a special event.
-      properties:
-        eventId:
-          $ref: '#/components/schemas/EventId'
-        name:
-          $ref: '#/components/schemas/EventName'
-        location:
-          $ref: '#/components/schemas/EventLocation'
-        eventDescription:
-          $ref: '#/components/schemas/EventDescription'
-        dates:
-          $ref: '#/components/schemas/EventDates'
-        price:
-          $ref: '#/components/schemas/EventPrice'
-      required:
-        - eventId
-        - name
-        - location
-        - eventDescription
-        - dates
-        - price
-  securitySchemes:
-    MuseumPlaceholderAuth:
-      type: http
-      scheme: basic
-  examples:
-    BuyGeneralTicketsRequestExample:
-      summary: General entry ticket
-      value:
-        ticketType: general
-        ticketDate: 2023-09-07
-        email: todd@example.com
-    BuyEventTicketsRequestExample:
-      summary: Special event ticket
-      value:
-        ticketType: general
-        eventId: dad4bce8-f5cb-4078-a211-995864315e39
-        ticketDate: 2023-09-05
-        email: todd@example.com
-    BuyGeneralTicketsResponseExample:
-      summary: General entry ticket
-      value:
-        message: Museum general entry ticket purchased
-        ticketId: 382c0820-0530-4f4b-99af-13811ad0f17a
-        ticketType: general
-        ticketDate: 2023-09-07
-        confirmationCode: ticket-general-e5e5c6-dce78
-    BuyEventTicketsResponseExample:
-      summary: Special event ticket
-      value:
-        message: Museum special event ticket purchased
-        ticketId: b811f723-17b2-44f7-8952-24b03e43d8a9
-        eventName: Mermaid Treasure Identification and Analysis
-        ticketType: event
-        ticketDate: 2023-09-05
-        confirmationCode: ticket-event-9c55eg-8v82a
-    CreateSpecialEventRequestExample:
-      summary: Create special event
-      value:
-        name: Mermaid Treasure Identification and Analysis
-        location: Under the seaaa 🦀 🎶 🌊.
-        eventDescription: Join us as we review and classify a rare collection of 20 thingamabobs, gadgets, gizmos, whoosits, and whatsits, kindly donated by Ariel.
-        dates:
-          - 2023-09-05
-          - 2023-09-08
-        price: 0
-    CreateSpecialEventResponseExample:
-      summary: Special event created
-      value:
-        eventId: dad4bce8-f5cb-4078-a211-995864315e39
-        name: Mermaid Treasure Identification and Analysis
-        location: Under the seaaa 🦀 🎶 🌊.
-        eventDescription: Join us as we review and classify a rare collection of 20 thingamabobs, gadgets, gizmos, whoosits, and whatsits, kindly donated by Ariel.
-        dates:
-          - 2023-09-05
-          - 2023-09-08
-        price: 30
-    GetSpecialEventResponseExample:
-      summary: Get special event
-      value:
-        eventId: 6744a0da-4121-49cd-8479-f8cc20526495
-        name: Time Traveler Tea Party
-        location: Temporal Tearoom
-        eventDescription: Sip tea with important historical figures.
-        dates:
-          - 2023-11-18
-          - 2023-11-25
-          - 2023-12-02
-        price: 60
-    ListSpecialEventsResponseExample:
-      summary: List of special events
-      value:
-        - eventId: f3e0e76e-e4a8-466e-ab9c-ae36c15b8e97
-          name: Sasquatch Ballet
-          location: Seattle... probably
-          eventDescription: They're big, they're hairy, but they're also graceful. Come learn how the biggest feet can have the lightest touch.
-          dates:
-            - 2023-12-15
-            - 2023-12-22
-          price: 40
-        - eventId: 2f14374a-9c65-4ee5-94b7-fba66d893483
-          name: Solar Telescope Demonstration
-          location: Far from the sun.
-          eventDescription: Look at the sun without going blind!
-          dates:
-            - 2023-09-07
-            - 2023-09-14
-          price: 50
-        - eventId: 6aaa61ba-b2aa-4868-b803-603dbbf7bfdb
-          name: Cook like a Caveman
-          location: Fire Pit on East side
-          eventDescription: Learn to cook on an open flame.
-          dates:
-            - 2023-11-10
-            - 2023-11-17
-            - 2023-11-24
-          price: 5
-        - eventId: 602b75e1-5696-4ab8-8c7a-f9e13580f910
-          name: Underwater Basket Weaving
-          location: Rec Center Pool next door.
-          eventDescription: Learn to weave baskets underwater.
-          dates:
-            - 2023-09-12
-            - 2023-09-15
-          price: 15
-        - eventId: dad4bce8-f5cb-4078-a211-995864315e39
-          name: Mermaid Treasure Identification and Analysis
-          location: Room Sea-12
-          eventDescription: Join us as we review and classify a rare collection of 20 thingamabobs, gadgets, gizmos, whoosits, and whatsits — kindly donated by Ariel.
-          dates:
-            - 2023-09-05
-            - 2023-09-08
-          price: 30
-        - eventId: 6744a0da-4121-49cd-8479-f8cc20526495
-          name: Time Traveler Tea Party
-          location: Temporal Tearoom
-          eventDescription: Sip tea with important historical figures.
-          dates:
-            - 2023-11-18
-            - 2023-11-25
-            - 2023-12-02
-          price: 60
-        - eventId: 3be6453c-03eb-4357-ae5a-984a0e574a54
-          name: Pirate Coding Workshop
-          location: Computer Room
-          eventDescription: Captain Blackbeard shares his love of the C...language. And possibly Arrrrr (R lang).
-          dates:
-            - 2023-10-29
-            - 2023-10-30
-            - 2023-10-31
-          price: 45
-        - eventId: 9d90d29a-2af5-4206-97d9-9ea9ceadcb78
-          name: Llama Street Art Through the Ages
-          location: Auditorium
-          eventDescription: Llama street art?! Alpaca my bags -- let's go!
-          dates:
-            - 2023-10-29
-            - 2023-10-30
-            - 2023-10-31
-          price: 45
-        - eventId: a3c7b2c4-b5fb-4ef7-9322-00a919864957
-          name: The Great Parrot Debate
-          location: Outdoor Amphitheatre
-          eventDescription: See leading parrot minds discuss important geopolitical issues.
-          dates:
-            - 2023-11-03
-            - 2023-11-10
-          price: 35
-        - eventId: b92d46b7-4c5d-422b-87a5-287767e26f29
-          name: Eat a Bunch of Corn
-          location: Cafeteria
-          eventDescription: We accidentally bought too much corn. Please come eat it.
-          dates:
-            - 2023-11-10
-            - 2023-11-17
-            - 2023-11-24
-          price: 5
-    UpdateSpecialEventRequestExample:
-      summary: Update special event request
-      value:
-        location: On the beach.
-        price: 15
-    UpdateSpecialEventResponseExample:
-      summary: Update special event
-      value:
-        eventId: dad4bce8-f5cb-4078-a211-995864315e39
-        name: Mermaid Treasure Identification and Analysis
-        location: On the beach.
-        eventDescription: Join us as we review and classify a rare collection of 20 thingamabobs, gadgets, gizmos, whoosits, and whatsits, kindly donated by Ariel.
-        dates:
-          - 2023-09-05
-          - 2023-09-08
-        price: 15
-    GetMuseumHours:
-      summary: Museum opening hours
-      value:
-        - date: '2023-09-11'
-          timeOpen: '09:00'
-          timeClose: '18:00'
-        - date: '2023-09-12'
-          timeOpen: '09:00'
-          timeClose: '18:00'
-        - date: '2023-09-13'
-          timeOpen: '09:00'
-          timeClose: '18:00'
-        - date: '2023-09-14'
-          timeOpen: '09:00'
-          timeClose: '18:00'
-        - date: '2023-09-15'
-          timeOpen: '10:00'
-          timeClose: '16:00'
-        - date: '2023-09-18'
-          timeOpen: '09:00'
-          timeClose: '18:00'
-        - date: '2023-09-19'
-          timeOpen: '09:00'
-          timeClose: '18:00'
-        - date: '2023-09-20'
-          timeOpen: '09:00'
-          timeClose: '18:00'
-        - date: '2023-09-21'
-          timeOpen: '09:00'
-          timeClose: '18:00'
-        - date: '2023-09-22'
-          timeOpen: '10:00'
-          timeClose: '16:00'
-    ClosedMuseumHours:
-      summary: The museum is closed
-      value: []
-  parameters:
-    PaginationPage:
-      name: page
-      in: query
-      description: The page number to retrieve.
-      schema:
-        type: integer
-        default: 1
-        example: 2
-    PaginationLimit:
-      name: limit
-      in: query
-      description: The number of days per page.
-      schema:
-        type: integer
-        default: 10
-        maximum: 30
-        example: 15
-    EventId:
-      name: eventId
-      in: path
-      description: An identifier for a special event.
-      required: true
-      schema:
-        type: string
-        format: uuid
-        example: dad4bce8-f5cb-4078-a211-995864315e39
-    StartDate:
-      name: startDate
-      in: query
-      description: The starting date to retrieve future operating hours from. Defaults to today's date.
-      schema:
-        type: string
-        format: date
-        example: 2023-02-23
-    EndDate:
-      name: endDate
-      in: query
-      description: The end of a date range to retrieve special events for. Defaults to 7 days after `startDate`.
-      schema:
-        type: string
-        format: date
-        example: 2023-04-18
-    TicketId:
-      name: ticketId
-      in: path
-      description: An identifier for a ticket to a museum event. Used to generate ticket image.
-      required: true
-      schema:
-        type: string
-        format: uuid
-        example: a54a57ca-36f8-421b-a6b4-2e8f26858a4c
-
 tags:
-  - name: Operations
-    x-displayName: About the museum
-    description: Operational information about the museum.
-  - name: Events
-    x-displayName: Upcoming events
-    description: Special events hosted by the Museum.
-  - name: Tickets
-    x-displayName: Buy tickets
-    description: Museum tickets for general entrance or special events.
+  - name: Stats
+    x-displayName: Overview
+    description: The General API provides several endpoints for interacting with our decentralized finance platform. These endpoints allow you to access general statistics, token-specific data, etc. Here is an overview of the available endpoints.
+  - name: Rewards
+    x-displayName: Overview
+    description: The Profit Distribution API is designed to manage, create and track referrals within the PrivatePools network. Here is an overview of the available endpoints.
 
 x-tagGroups:
-  - name: Plan your visit
+  - name: GENERAL API
     tags:
-      - Operations
-      - Events
-  - name: Purchases
+      - Stats
+  - name: PROFIT DISTRIBUTION API
     tags:
-      - Tickets
+      - Rewards
 
 security:
   - MuseumPlaceholderAuth: []

@@ -207,11 +207,11 @@ exports[`Components SchemaView discriminator should correctly render SchemaView 
                         "maxWidth": "260px",
                       },
                       "rightPanel": {
-                        "backgroundColor": "#263238",
+                        "backgroundColor": "#02031c",
                         "servers": {
                           "overlay": {
                             "backgroundColor": "#fafafa",
-                            "textColor": "#263238",
+                            "textColor": "#02031c",
                           },
                           "url": {
                             "backgroundColor": "#fff",
@@ -479,11 +479,11 @@ exports[`Components SchemaView discriminator should correctly render SchemaView 
                         "maxWidth": "260px",
                       },
                       "rightPanel": {
-                        "backgroundColor": "#263238",
+                        "backgroundColor": "#02031c",
                         "servers": {
                           "overlay": {
                             "backgroundColor": "#fafafa",
-                            "textColor": "#263238",
+                            "textColor": "#02031c",
                           },
                           "url": {
                             "backgroundColor": "#fff",
@@ -738,11 +738,11 @@ exports[`Components SchemaView discriminator should correctly render SchemaView 
                   "maxWidth": "260px",
                 },
                 "rightPanel": {
-                  "backgroundColor": "#263238",
+                  "backgroundColor": "#02031c",
                   "servers": {
                     "overlay": {
                       "backgroundColor": "#fafafa",
-                      "textColor": "#263238",
+                      "textColor": "#02031c",
                     },
                     "url": {
                       "backgroundColor": "#fff",
@@ -1059,11 +1059,11 @@ exports[`Components SchemaView discriminator should correctly render SchemaView 
                         "maxWidth": "260px",
                       },
                       "rightPanel": {
-                        "backgroundColor": "#263238",
+                        "backgroundColor": "#02031c",
                         "servers": {
                           "overlay": {
                             "backgroundColor": "#fafafa",
-                            "textColor": "#263238",
+                            "textColor": "#02031c",
                           },
                           "url": {
                             "backgroundColor": "#fff",
@@ -1343,11 +1343,11 @@ exports[`Components SchemaView discriminator should correctly render SchemaView 
                         "maxWidth": "260px",
                       },
                       "rightPanel": {
-                        "backgroundColor": "#263238",
+                        "backgroundColor": "#02031c",
                         "servers": {
                           "overlay": {
                             "backgroundColor": "#fafafa",
-                            "textColor": "#263238",
+                            "textColor": "#02031c",
                           },
                           "url": {
                             "backgroundColor": "#fff",
@@ -1598,11 +1598,11 @@ exports[`Components SchemaView discriminator should correctly render SchemaView 
                   "maxWidth": "260px",
                 },
                 "rightPanel": {
-                  "backgroundColor": "#263238",
+                  "backgroundColor": "#02031c",
                   "servers": {
                     "overlay": {
                       "backgroundColor": "#fafafa",
-                      "textColor": "#263238",
+                      "textColor": "#02031c",
                     },
                     "url": {
                       "backgroundColor": "#fff",
@@ -1878,11 +1878,11 @@ exports[`Components SchemaView discriminator should correctly render SchemaView 
               "maxWidth": "260px",
             },
             "rightPanel": {
-              "backgroundColor": "#263238",
+              "backgroundColor": "#02031c",
               "servers": {
                 "overlay": {
                   "backgroundColor": "#fafafa",
-                  "textColor": "#263238",
+                  "textColor": "#02031c",
                 },
                 "url": {
                   "backgroundColor": "#fff",
@@ -2188,11 +2188,11 @@ exports[`Components SchemaView discriminator should correctly render SchemaView 
                   "maxWidth": "260px",
                 },
                 "rightPanel": {
-                  "backgroundColor": "#263238",
+                  "backgroundColor": "#02031c",
                   "servers": {
                     "overlay": {
                       "backgroundColor": "#fafafa",
-                      "textColor": "#263238",
+                      "textColor": "#02031c",
                     },
                     "url": {
                       "backgroundColor": "#fff",
@@ -2460,11 +2460,11 @@ exports[`Components SchemaView discriminator should correctly render SchemaView 
                   "maxWidth": "260px",
                 },
                 "rightPanel": {
-                  "backgroundColor": "#263238",
+                  "backgroundColor": "#02031c",
                   "servers": {
                     "overlay": {
                       "backgroundColor": "#fafafa",
-                      "textColor": "#263238",
+                      "textColor": "#02031c",
                     },
                     "url": {
                       "backgroundColor": "#fff",
@@ -2719,11 +2719,11 @@ exports[`Components SchemaView discriminator should correctly render SchemaView 
             "maxWidth": "260px",
           },
           "rightPanel": {
-            "backgroundColor": "#263238",
+            "backgroundColor": "#02031c",
             "servers": {
               "overlay": {
                 "backgroundColor": "#fafafa",
-                "textColor": "#263238",
+                "textColor": "#02031c",
               },
               "url": {
                 "backgroundColor": "#fff",

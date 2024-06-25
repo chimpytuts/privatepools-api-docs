@@ -12,7 +12,9 @@ export default function RedoclyLogo(): JSX.Element | null {
     <img
       alt={'redocly logo'}
       onError={() => setDisplay(false)}
-      src={'https://cdn.redoc.ly/redoc/logo-mini.svg'}
+      src={
+        'https://media.licdn.com/dms/image/C4E0BAQGmnkpPk41dzw/company-logo_200_200/0/1678977923845?e=1727308800&v=beta&t=39swqypU4t7ncAVhkKIKc2SQ1pYcmNaajs_G30nerV8'
+      }
     />
   ) : null;
 }

@@ -50,7 +50,7 @@ export const Dropdown = styled(DropdownComponent)<{
   position: relative;
   width: auto;
   background: white;
-  color: #263238;
+  color: #02031c;
   font-family: ${props => props.theme.typography.headings.fontFamily};
   font-size: 0.929em;
   line-height: 1.5em;

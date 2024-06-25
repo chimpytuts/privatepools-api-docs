@@ -226,17 +226,17 @@ If set to `true`, the API definition is considered untrusted and all HTML/Markdo
   * `maxWidth`: # COMPUTED: sidebar.width
   * `gutter`: '2px' # logo image padding
 * `rightPanel`
-  * `backgroundColor`: '#263238'
+  * `backgroundColor`: '#02031c'
   * `width`: '40%'
   * `textColor`: '#ffffff'
   * `servers`
     * `overlay`
       * `backgroundColor`: '#fafafa'
-      * `textColor`: '#263238'
+      * `textColor`: '#02031c'
     * `url`
       * `backgroundColor`: '#fff'
 * `fab`
-  * `backgroundColor`: '#263238'
+  * `backgroundColor`: '#02031c'
   * `color`: '#ffffff'
 
 ## Additional customization

@@ -91,34 +91,6 @@ class DemoApp extends React.Component<
     }
     return (
       <>
-        <Heading>
-          <a href=".">
-            <Logo
-              src="https://github.com/Redocly/redoc/raw/main/docs/images/redoc.png"
-              alt="Redoc logo"
-            />
-          </a>
-          <ControlsContainer>
-            <FileInput onUpload={this.handleUploadFile} />
-            <ComboBox
-              placeholder={'URL to a spec to try'}
-              options={demos}
-              onChange={this.handleChange}
-              value={specUrl === DEFAULT_SPEC ? '' : specUrl}
-            />
-            <CorsCheckbox title="Use CORS proxy">
-              <input id="cors_checkbox" type="checkbox" onChange={this.toggleCors} checked={cors} />
-              <label htmlFor="cors_checkbox">CORS</label>
-            </CorsCheckbox>
-          </ControlsContainer>
-          <iframe
-            src="https://ghbtns.com/github-btn.html?user=Redocly&amp;repo=redoc&amp;type=star&amp;count=true&amp;size=large"
-            frameBorder="0"
-            scrolling="0"
-            width="160px"
-            height="30px"
-          />
-        </Heading>
         <RedocStandalone
           spec={this.state.spec}
           specUrl={proxiedUrl}

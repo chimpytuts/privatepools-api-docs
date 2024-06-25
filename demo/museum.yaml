@@ -24,6 +24,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Success
@@ -269,6 +271,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       parameters:
         - name: token
           in: path
@@ -355,6 +359,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       parameters:
         - name: token
           in: path
@@ -441,6 +447,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       parameters:
         - name: token
           in: path
@@ -527,6 +535,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Success
@@ -580,6 +590,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Success
@@ -811,6 +823,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       parameters:
         - name: pool
           in: path
@@ -1048,6 +1062,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Success
@@ -1279,6 +1295,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       parameters:
         - name: pair
           in: path
@@ -1516,6 +1534,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Success
@@ -1783,6 +1803,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       parameters:
         - name: token
           in: path
@@ -2056,6 +2078,8 @@ paths:
         - Stats
       servers:
         - url: 'https://polygonrunbotdoprimocosta.xyz'
+      security:
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Success
@@ -2159,6 +2183,8 @@ paths:
         - Rewards
       servers:
         - url: 'https://binancewrewrwrrfrsasdfew.xyz'
+      security:
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Success
@@ -2204,6 +2230,8 @@ paths:
         - Rewards
       servers:
         - url: 'https://binancewrewrwrrfrsasdfew.xyz'
+      security:
+        - ApiKeyAuth: []
       parameters:
         - name: user
           in: path
@@ -2260,6 +2288,8 @@ paths:
         - Rewards
       servers:
         - url: 'https://binancewrewrwrrfrsasdfew.xyz'
+      security:
+        - ApiKeyAuth: []
       parameters:
         - name: user
           in: path
@@ -2291,6 +2321,10 @@ paths:
       operationId: generateReferralCode
       tags:
         - Rewards
+      servers:
+        - url: 'https://binancewrewrwrrfrsasdfew.xyz'
+      security:
+        - ApiKeyAuth: []
       requestBody:
         required: true
         content:
@@ -2340,5 +2374,12 @@ x-tagGroups:
     tags:
       - Rewards
 
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+
 security:
-  - MuseumPlaceholderAuth: []
+  - ApiKeyAuth: []

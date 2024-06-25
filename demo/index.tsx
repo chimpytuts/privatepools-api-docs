@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
-import styled from 'styled-components';
 import { RedocStandalone } from '../src';
 
 const DEFAULT_SPEC = 'museum.yaml';
@@ -76,22 +75,6 @@ class DemoApp extends React.Component<
     }
     return (
       <>
-        <Heading>
-          <LogoContainer>
-            <Title>PrivatePools</Title>
-            <SocialIcons>
-              <a href="https://medium.com" target="_blank" rel="noopener noreferrer">
-                <img src="path_to_medium_logo" alt="Medium logo" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <img src="path_to_twitter_logo" alt="Twitter logo" />
-              </a>
-              <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
-                <img src="path_to_discord_logo" alt="Discord logo" />
-              </a>
-            </SocialIcons>
-          </LogoContainer>
-        </Heading>
         <RedocStandalone
           spec={this.state.spec}
           specUrl={proxiedUrl}
@@ -103,45 +86,6 @@ class DemoApp extends React.Component<
 }
 
 /* ====== Styled components ====== */
-
-const Heading = styled.nav`
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  box-sizing: border-box;
-  background: white;
-  border-bottom: 1px solid #cccccc;
-  z-index: 10;
-  padding: 5px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: Roboto, sans-serif;
-`;
-
-const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Title = styled.h1`
-  font-size: 24px;
-  margin: 0;
-  padding-right: 15px;
-`;
-
-const SocialIcons = styled.div`
-  display: flex;
-  gap: 10px;
-
-  img {
-    height: 24px;
-    width: 24px;
-  }
-`;
-
 const container = document.getElementById('container');
 const root = createRoot(container!);
 root.render(<DemoApp />);

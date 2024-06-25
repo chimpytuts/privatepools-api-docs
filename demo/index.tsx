@@ -2,23 +2,9 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import styled from 'styled-components';
 import { RedocStandalone } from '../src';
-import ComboBox from './ComboBox';
-import FileInput from './components/FileInput';
 
 const DEFAULT_SPEC = 'museum.yaml';
 const NEW_VERSION_PETSTORE = 'openapi-3-1.yaml';
-
-const demos = [
-  { value: DEFAULT_SPEC, label: 'Museum API' },
-  { value: NEW_VERSION_PETSTORE, label: 'Petstore OpenAPI 3.1' },
-  { value: 'https://api.apis.guru/v2/specs/instagram.com/1.0.0/swagger.yaml', label: 'Instagram' },
-  {
-    value: 'https://api.apis.guru/v2/specs/googleapis.com/calendar/v3/openapi.yaml',
-    label: 'Google Calendar',
-  },
-  { value: 'https://api.apis.guru/v2/specs/slack.com/1.7.0/openapi.yaml', label: 'Slack' },
-  { value: 'https://api.apis.guru/v2/specs/zoom.us/2.0.0/openapi.yaml', label: 'Zoom.us' },
-];
 
 class DemoApp extends React.Component<
   Record<string, unknown>,
@@ -110,27 +96,6 @@ class DemoApp extends React.Component<
 }
 
 /* ====== Styled components ====== */
-
-const ControlsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex: 1;
-  margin: 0 15px;
-  align-items: center;
-`;
-
-const CorsCheckbox = styled.div`
-  margin-left: 10px;
-  white-space: nowrap;
-
-  label {
-    font-size: 13px;
-  }
-
-  @media screen and (max-width: 550px) {
-    display: none;
-  }
-`;
 
 const Heading = styled.nav`
   position: sticky;

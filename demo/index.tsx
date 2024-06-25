@@ -43,7 +43,6 @@ class DemoApp extends React.Component<
   handleChange = (url: string) => {
     if (url === NEW_VERSION_PETSTORE) {
       this.setState({ cors: false });
-      0;
     }
     this.setState({
       specUrl: url,
@@ -78,12 +77,20 @@ class DemoApp extends React.Component<
     return (
       <>
         <Heading>
-          <a href=".">
-            <Logo
-              src="https://github.com/Redocly/redoc/raw/main/docs/images/redoc.png"
-              alt="Redoc logo"
-            />
-          </a>
+          <LogoContainer>
+            <Title>PrivatePools</Title>
+            <SocialIcons>
+              <a href="https://medium.com" target="_blank" rel="noopener noreferrer">
+                <img src="path_to_medium_logo" alt="Medium logo" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <img src="path_to_twitter_logo" alt="Twitter logo" />
+              </a>
+              <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+                <img src="path_to_discord_logo" alt="Discord logo" />
+              </a>
+            </SocialIcons>
+          </LogoContainer>
         </Heading>
         <RedocStandalone
           spec={this.state.spec}
@@ -109,18 +116,29 @@ const Heading = styled.nav`
   padding: 5px;
 
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-family: Roboto, sans-serif;
 `;
 
-const Logo = styled.img`
-  height: 40px;
-  width: 124px;
-  display: inline-block;
-  margin-right: 15px;
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-  @media screen and (max-width: 950px) {
-    display: none;
+const Title = styled.h1`
+  font-size: 24px;
+  margin: 0;
+  padding-right: 15px;
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  gap: 10px;
+
+  img {
+    height: 24px;
+    width: 24px;
   }
 `;
 
